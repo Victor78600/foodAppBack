@@ -45,6 +45,7 @@ async function seed() {
         name: oneMeal.strMeal,
       };
 
+      meal.idMeal = oneMeal.idMeal;
       meal.category = oneMeal.strCategory;
       meal.area = oneMeal.strArea;
       meal.instructions = oneMeal.strInstructions;
