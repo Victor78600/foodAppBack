@@ -37,13 +37,20 @@ async function seed() {
     if (!response.data.meals) {
       continue;
     }
-    console.log(response.data);
+    /* console.log(response.data); */
     const originalMeals = response.data.meals;
 
     for (const oneMeal of originalMeals) {
       const meal = {
         name: oneMeal.strMeal,
       };
+
+      meal.category = oneMeal.strCategory;
+      meal.area = oneMeal.strArea;
+      meal.instructions = oneMeal.strInstructions;
+      meal.image = oneMeal.strMealThumb;
+      meal.video = oneMeal.strYoutube;
+
       meal.ingredients = [
         { ingredient: oneMeal.strIngredient1, quantity: oneMeal.strMeasure1 },
         { ingredient: oneMeal.strIngredient2, quantity: oneMeal.strMeasure2 },
@@ -57,7 +64,16 @@ async function seed() {
         { ingredient: oneMeal.strIngredient10, quantity: oneMeal.strMeasure10 },
         { ingredient: oneMeal.strIngredient11, quantity: oneMeal.strMeasure11 },
         { ingredient: oneMeal.strIngredient12, quantity: oneMeal.strMeasure12 },
+        { ingredient: oneMeal.strIngredient13, quantity: oneMeal.strMeasure13 },
+        { ingredient: oneMeal.strIngredient14, quantity: oneMeal.strMeasure14 },
+        { ingredient: oneMeal.strIngredient15, quantity: oneMeal.strMeasure15 },
+        { ingredient: oneMeal.strIngredient16, quantity: oneMeal.strMeasure16 },
+        { ingredient: oneMeal.strIngredient17, quantity: oneMeal.strMeasure17 },
+        { ingredient: oneMeal.strIngredient18, quantity: oneMeal.strMeasure18 },
+        { ingredient: oneMeal.strIngredient19, quantity: oneMeal.strMeasure19 },
+        { ingredient: oneMeal.strIngredient20, quantity: oneMeal.strMeasure20 },
       ];
+
       meals.push(meal);
     }
   }
